@@ -1,0 +1,14 @@
+@if(letter.letter === ''){
+<div
+  class="h-16 w-16 border-2 rounded-lg flex border-cyan-300 bg-slate-100 items-center justify-center p-3"
+>
+  <mat-icon class="!text-gray-400"> question_mark </mat-icon>
+</div>
+} @if(letter.letter !== ''){
+<div
+  [ngClass]="styleClasses"
+  class="h-16 w-16 text-2xl font-serif font-bold border-2 rounded-lg flex border-cyan-300 items-center justify-center p-3"
+>
+  {{ letter.letter }}
+</div>
+}

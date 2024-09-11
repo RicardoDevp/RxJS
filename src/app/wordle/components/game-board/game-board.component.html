@@ -1,0 +1,23 @@
+<div class="grid grid-cols-3 flex-grow gap-4">
+  <div class="flex text-start justify-start">
+    <app-game-instructions />
+  </div>
+  <div
+    class="p-4 border-2 rounded-lg border-blue-400 items-center justify-center shadow-lg"
+  >
+    @for (row of letterMatrix; track $index; let rowIndex = $index) {
+    <div class="p-2 flex flex-row gap-4">
+      @for (col of letterMatrix[rowIndex]; track $index; let colIndex = $index)
+      {
+      <app-letter
+        [change]="change"
+        [letter]="letterMatrix[rowIndex][colIndex]"
+      />
+      }
+    </div>
+    }
+  </div>
+  <div class="flex text-center justify-center items-start">
+    <app-timer [winGame]="winGame" (finishTime)="finishTimer()"></app-timer>
+  </div>
+</div>

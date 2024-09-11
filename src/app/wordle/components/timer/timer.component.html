@@ -1,0 +1,41 @@
+<div class="px-4 border-2 border-blue-400 rounded-lg w-80 py-5 shadow-lg">
+  <div class="font-serif font-semibold text-xl mb-6">
+    Establecer temporizador
+  </div>
+  <mat-form-field>
+    <input
+      matInput
+      type="number"
+      placeholder="Segundos"
+      [(ngModel)]="timeInSeconds"
+      class="mb-4"
+    />
+  </mat-form-field>
+  <div class="h-20 mb-4 w-full flex justify-center text-center">
+    <div
+      class="w-40 h-20 flex flex-row justify-center text-center items-center"
+    >
+      <div class="font-bold font-mono text-5xl text-gray-700">
+        {{ clockMinutes }}
+      </div>
+      <div class="font-semibold font-mono text-2xl text-gray-700">:</div>
+      <div class="font-bold text-5xl font-mono text-gray-700">
+        {{ clockSeconds }}
+      </div>
+    </div>
+  </div>
+  <button
+    mat-fab
+    extended
+    (click)="startTimer()"
+    class="shadow-none"
+    [class]="
+      disabledStartButton
+        ? 'bg-gray-400'
+        : 'bg-gradient-to-r from-blue-500 to-cyan-500'
+    "
+  >
+    <mat-icon>play_arrow</mat-icon>
+    <div class="font-serif font-semibold text-base">Iniciar</div>
+  </button>
+</div>

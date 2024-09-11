@@ -1,0 +1,22 @@
+<div class="flex flex-col w-full h-full">
+  <app-top-bar />
+  <div class="flex flex-col flex-grow items-center justify-center gap-4">
+    <app-game-board [reset]="reset" (disableReset)="disableReset($event)" />
+  </div>
+  <div class="h-1/5 flex justify-center items-center">
+    <button
+      [disabled]="disabledReset"
+      matTooltip="Reiniciar juego"
+      mat-fab
+      [class]="
+        disabledReset
+          ? 'bg-gray-400'
+          : 'bg-gradient-to-r from-blue-500 to-cyan-500'
+      "
+      class="text-white mb-44 shadow-lg"
+      (click)="resetGame()"
+    >
+      <mat-icon>replay</mat-icon>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div
+  class="flex flex-col w-full h-full items-center align-middle justify-center text-center"
+>
+  <div class="font-serif text-xl font-semibold text-gray-700 mb-6">Pizarra</div>
+  <app-board class="mb-8" />
+
+  <button
+    matTooltip="Reiniciar pizarra"
+    mat-fab
+    class="text-white mb-24 shadow-lg bg-gradient-to-r from-blue-500 to-cyan-500"
+    (click)="resetBoard()"
+  >
+    <mat-icon>replay</mat-icon>
+  </button>
+</div>
